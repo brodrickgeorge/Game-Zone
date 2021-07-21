@@ -1,13 +1,17 @@
 import React from "react";
 
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, SafeAreaView } from "react-native";
 
 export default function ReviewDetails() {
   return (
-    <View>
-      <Text>ReviewDetails</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Text>Review Details</Text>
+    </SafeAreaView>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    padding: 24,
+  },
+});

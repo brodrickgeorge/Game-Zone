@@ -1,27 +1,28 @@
-import { StatusBar } from "expo-status-bar";
-import React from "react";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-
+import React, { useState } from "react";
 import Home from "./screens/Home";
-import ReviewDetails from "./screens/ReviewDetails";
-import About from "./screens/About";
+import * as Font from "expo-font";
+import AppLoading from "expo-app-loading";
+import { Text, View } from "react-native";
+
+
+const getFonts = () =>
+  Font.loadAsync({
+    "nunito-regular": require("./assets/fonts/Nunito-Regular.ttf"),
+    "nunito-bold": require("./assets/fonts/Nunito-Bold.ttf"),
+  });
 
 export default function App() {
-  return (
-    <SafeAreaView style={styles.container}>
-      <Home />
-      <About />
-      <ReviewDetails />
-      <StatusBar style="auto" />
-    </SafeAreaView>
-  );
-}
+  const [fontsLoaded, setFontsLoaded] = useState(false);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+  if (fontsLoaded) {
+    return <Home />;
+  } else {
+    return (
+      <AppLoading
+        startAsync={getFonts}
+        onFinish={() => setFontsLoaded(true)}
+        onError={console.warn}
+      />
+    );
+  }
+}
