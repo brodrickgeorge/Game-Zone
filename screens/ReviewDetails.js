@@ -1,17 +1,14 @@
 import React from "react";
 
-import { StyleSheet, View, Text, SafeAreaView } from "react-native";
+import { View, Text, SafeAreaView } from "react-native";
+import { globalStyles } from "../styles/Global";
 
 export default function ReviewDetails() {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>Review Details</Text>
+    <SafeAreaView style={globalStyles.container}>
+      <View style={globalStyles.container}>
+        <Text>About</Text>
+      </View>
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 24,
-  },
-});
