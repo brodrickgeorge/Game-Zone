@@ -11,14 +11,3 @@ export default function Home() {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 24,
-  },
-  titleText: {
-    fontFamily: "nunito-bold",
-    fontSize: 18,
-  },
-});
