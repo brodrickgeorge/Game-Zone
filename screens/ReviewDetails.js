@@ -1,17 +1,21 @@
 import React from "react";
 
-import { View, Text, SafeAreaView, Button } from "react-native";
+import { View, Text, SafeAreaView } from "react-native";
 import { globalStyles } from "../styles/Global";
 
 export default function ReviewDetails({ navigation }) {
-  const handlePress = () => { 
-    navigation.goBack();
-  };
   return (
     <SafeAreaView style={globalStyles.containerSA}>
       <View style={globalStyles.container}>
-        <Text style={globalStyles.titleText}>Review Details Screen</Text>
-        <Button title="Back to Home" onPress={handlePress} />
+        <Text style={globalStyles.titleText}>
+          {navigation.getParam("title")}
+        </Text>
+        <Text style={globalStyles.titleText}>
+          {navigation.getParam("rating")}
+        </Text>
+        <Text style={globalStyles.titleText}>
+          {navigation.getParam("body")}
+        </Text>
       </View>
     </SafeAreaView>
   );

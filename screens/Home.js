@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { View, Text, SafeAreaView, Button } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  FlatList,
+  TouchableOpacity,
+} from "react-native";
 import { globalStyles } from "../styles/Global";
 
 export default function Home({ navigation }) {
@@ -27,7 +33,16 @@ export default function Home({ navigation }) {
   return (
     <SafeAreaView style={globalStyles.containerSA}>
       <View style={globalStyles.container}>
-        <Text style={globalStyles.titleText}>Home Screen</Text>
+        <FlatList
+          data={reviews}
+          renderItem={({ item }) => (
+            <TouchableOpacity
+              onPress={() => navigation.navigate("ReviewDetails", item)}
+            >
+              <Text style={globalStyles.titleText}>{item.title}</Text>
+            </TouchableOpacity>
+          )}
+        />
       </View>
     </SafeAreaView>
   );
