@@ -4,7 +4,7 @@ import { View, Text, SafeAreaView, Button } from "react-native";
 import { globalStyles } from "../styles/Global";
 
 export default function ReviewDetails({ navigation }) {
-  const handlePress = () => {
+  const handlePress = () => { 
     navigation.goBack();
   };
   return (
