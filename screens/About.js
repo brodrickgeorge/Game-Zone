@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, SafeAreaView } from "react-native";
-import { globalStyles } from "../styles/Global";
+import { globalStyles } from "../styles/global";
 
 export default function About() {
   return (

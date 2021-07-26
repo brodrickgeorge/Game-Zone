@@ -1,23 +1,15 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-import { SafeAreaView } from "react-navigation";
-import { globalStyles } from "../styles/Global";
+import { globalStyles } from "../styles/global";
 
-export default function ReviewDetails({ navigation }) {
+export default function ReviewDetails({ route }) {
+  const item = route.params;
   return (
-    <SafeAreaView style={globalStyles.containerSA}>
-      <View style={globalStyles.container}>
-        <Text style={globalStyles.titleText}>
-          {navigation.getParam("title")}
-        </Text>
-        <Text style={globalStyles.titleText}>
-          {navigation.getParam("body")}
-        </Text>
-        <Text style={globalStyles.titleText}>
-          {navigation.getParam("rating")}
-        </Text>
-      </View>
-    </SafeAreaView>
+    <View style={globalStyles.container}>
+      <Text>{item.title}</Text>
+      <Text>{item.body}</Text>
+      <Text>{item.rating}</Text>
+    </View>
   );
 }
