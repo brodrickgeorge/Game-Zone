@@ -1,6 +1,7 @@
 import React from "react";
+import { View, Text } from "react-native";
 
-import { View, Text, SafeAreaView } from "react-native";
+import { SafeAreaView } from "react-navigation";
 import { globalStyles } from "../styles/Global";
 
 export default function ReviewDetails({ navigation }) {
@@ -11,10 +12,10 @@ export default function ReviewDetails({ navigation }) {
           {navigation.getParam("title")}
         </Text>
         <Text style={globalStyles.titleText}>
-          {navigation.getParam("rating")}
+          {navigation.getParam("body")}
         </Text>
         <Text style={globalStyles.titleText}>
-          {navigation.getParam("body")}
+          {navigation.getParam("rating")}
         </Text>
       </View>
     </SafeAreaView>
